@@ -1,0 +1,297 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.bar {
+    width: 17px;
+    height: 1px;
+    background-color: #847a7a;
+    margin: 5px 2px;
+}
+
+.middle-bar {
+    padding: 7px;
+    width: auto;
+    height: auto;
+    background-color: #f8f9fa;
+   margin-top: 5px;
+}
+
+.border>img {
+    height: 20px;
+    width: 20px;
+}
+
+.hand>img {
+    height: 15px;
+    width: 15px;
+    /* padding: 2px 0px; */
+    margin-left: 2px;
+}
+
+.hand {
+    margin-left: 2px;
+
+}
+
+.vline {
+    height: 22px;
+    width: 1.5px;
+    background-color: #e1d6d6;
+    margin: 4px;
+}
+
+.num {
+    font-size: 10px;
+    position: absolute;
+    display: flex;
+    height: 0px;
+    margin-left: 18px;
+    margin-top: -12px;
+    color: rgb(167, 175, 175);
+}
+
+.r-btn {
+    width: 30px;
+    border: none;
+}
+
+.r-btn>svg {
+    color: rgb(66, 47, 207);
+}
+
+.r-btn>svg:hover {
+    color: rgb(32, 15, 164);
+}
+
+.zoom-out {
+    position: relative;
+    margin-right: -6px;
+}
+
+.zoom-in {
+    position: relative;
+    margin-left: -6px;
+}
+
+.back-btn {
+    margin-right: -6px;
+}
+
+.footer {
+    margin-top: 300px;
+}
+
+.zoom-out>img,
+.zoom-in>img {
+    opacity: 0.5;
+}
+
+.next-btn>img,
+.back-btn>img {
+    opacity: 0.5;
+}
+
+.user-btn {
+    background-color: rgb(100, 86, 202) !important;
+}
+
+.user-btn:hover {
+    background-color: rgb(64, 45, 212) !important;
+}
+
+.excali-logo {
+    margin: auto;
+    width: auto;
+    height: 50px;
+    margin-top: 140px;
+
+}
+
+.svg-1 {
+    width: 45px;
+    height: 40px;
+    color: rgb(110, 63, 204);
+    margin-right: 7px;
+}
+
+.svg-2 {
+    height: 28.5px;
+    color: rgb(41, 13, 102);
+}
+.all-button>button{
+    color: rgb(187, 179, 179);
+    width: 300px;
+    
+}
+.btn-a>span{
+    float: right;
+}
+.btn-a{
+    margin-bottom: 1px;
+}
+.info-1{
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    color: #bcbcbc;
+    letter-spacing: 2px;
+    
+}
+
+.card123{
+    display: none;
+    margin-top: 25px;
+    position: fixed;
+    background-color: #f8f9fa !important;
+    max-height: calc(90vh - 140px);
+    overflow-y: auto;
+    width: 245px;
+    margin-left: 10px;
+    border-radius: 8px;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.butt>svg{
+    width: 20px;
+    height:20px;
+}
+.ctrl{
+    margin-left: 95px;
+    font-size: 14px;
+    color: #ada5a5;
+   
+}
+.ctrl1{
+    font-size: 14px;
+    color: #ada5a5;
+}
+.open{
+    margin-left: 15px;
+    font-size: 14px;
+
+}
+.hor-line{
+    height: 1px;
+    margin: 0.5rem 10px;
+    background-color: #837979;
+    
+}
+.color-picker__button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    border-radius: 4px;
+
+}
+.vert-line-canvas{
+    height: 25px;
+    width: 2px;
+    background-color: #777070;
+    margin: 5px;
+    margin-left: 5px;
+}
+.active-color{
+    margin: 5px;
+    padding: 0px;
+}
+.dropdown-select{
+    width: 90% !important;
+    margin-left: 12px;
+    border-radius: 4px;
+}
+.ctrl-2{
+    margin-left: 21x;
+    font-size: 14px;
+    color: #ada5a5;
+}
+
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
+
+@media only screen and (max-width: 600px) {
+     /* .mainboard{
+        background-color: #eb1313;
+     } */
+
+     .menu-button{
+        position: fixed;
+        margin-top: 600px;
+     }
+     .last-btn{
+        display: none;
+     }
+     .navbar{
+        width: 90%;
+        overflow-x: scroll;
+        margin: auto;
+        border-radius: 10px !important;
+       
+     }
+    .middle-bar{
+        box-shadow: none !important ;
+        border-radius: 12px;
+    }
+    .excali-logo {
+        height: 35px;
+        margin-top: 150px;
+    }
+    .info-1 {
+        width: 80% !important;
+        font-family: 'Caveat', cursive;
+        font-size: 20px;
+        color: #bcbcbc;
+        letter-spacing: 1px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .zoom {
+        display: none;
+    }
+    .all-button{
+        margin-bottom: 50px !important;
+    }
+    .rights-button{
+        display: none;
+    }
+.footer{
+    margin-top:350px;
+}
+.back-firward{
+    margin-left: 155px;
+}
+.back-btn{
+    
+}
+.next-btn{
+    margin-left: 80px;
+}
+.card123{
+    display: none;
+    margin-top: 100px;
+    position: fixed;
+    background-color: #f8f9fa !important;
+    max-height: calc(80vh - 140px);
+    overflow-y: auto;
+    width: 300px;
+    margin-left: 10px;
+    border-radius: 8px;
+}
+}
