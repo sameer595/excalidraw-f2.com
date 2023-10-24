@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>excalidraw</title>
     <link rel="stylesheet" href="./style.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <script src="./script.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -22,8 +24,8 @@
 
 
 <body>
-    <section class="mainboard">
-        <div class="navbar">
+
+        <div class="navbar" >
             <div class="menu-btn mx-2">
                 <button class="btn border btn-light menu-button" type="button">
                     <div class="bar"></div>
@@ -295,7 +297,7 @@
                     </div>
                 </div>
             </div>
-            <div class="middle-bar d-flex align-items-center rounded shadow">
+            <div class="middle-bar d-flex align-items-center rounded border shadow-sm p-1">
                 <button type="button" class=" hand btn btn-light">
                     <img src="./padlock.png" alt=""></button>
                 <div class="vline">
@@ -305,7 +307,8 @@
                     <img src="./hand.png" alt=""></button>
                 <button type="button" class=" hand btn btn-light x">
                     <img src="./cursor.png" alt="">
-                    <div class="num">1</div>
+                    <div class="num">1</div></button>
+                    <input type="color" id="color-picker">
                     <button type="button" class=" hand btn btn-light ">
                         <img src="./stop.png" alt="">
                         <div class="num">2</div>
@@ -314,7 +317,7 @@
                         <img src="./diamond.png" alt="">
                         <div class="num">3</div>
                     </button>
-                    <button type="button" class=" hand btn btn-light ">
+                    <button type="button" id="circleButton" class=" hand btn btn-light ">
                         <img src="./dry-clean.png" alt="">
                         <div class="num">4</div>
                     </button>
@@ -326,7 +329,7 @@
                         <img src="./line.png" alt="">
                         <div class="num">6</div>
                     </button>
-                    <button type="button" class=" hand btn btn-light ">
+                    <button type="button" class=" hand btn btn-light" id="pencil">
                         <img src="./edit.png" alt="">
                         <div class="num">7</div>
                     </button>
@@ -338,7 +341,7 @@
                         <img src="./photos.png" alt="">
                         <div class="num">9</div>
                     </button>
-                    <button type="button" class=" hand btn btn-light ">
+                    <button type="button" id="eraserButton" class=" hand btn btn-light ">
                         <img src="./eraser.png" alt="">
                         <div class="num">0</div>
                     </button>
@@ -358,13 +361,12 @@
 
 
         </div>
-
-
-    </section>
+        <canvas id="canvas" style="background-color: FFFFFF;"></canvas>
 
 
 
-    <section class="excali-logo align-items-center d-flex flex-column">
+    <!-- <div class="excali-logo align-items-center d-flex flex-column">
+
         <div class="ExcalidrawLogo is-small d-flex">
             <svg class="svg-1" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
                 class="ExcalidrawLogo-icon">
@@ -399,11 +401,8 @@
             <button type="button" class="btn btn-light btn-a text-start">Try Excalidraw plus!</button>
         </div>
 
-    </section>
-
-
-
-    <section class="footer d-flex justify-content-between">
+    </div> -->
+  <div class="c d-flex justify-content-between footer">
         <div class="left-button d-flex">
             <div class="zoom mx-4">
                 <button class="btn border btn-light zoom-out" type="button">
@@ -428,7 +427,7 @@
 
 
 
-        <div class="rights-button mx-4 ">
+        <div class="rights-button mx-4 d-flex ">
             <button class="r-btn mx-2" type="button">
                 <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class="">
                     <path fill="currentColor"
@@ -440,7 +439,9 @@
                 <img src="./help.png" alt="">
             </button>
         </div>
-    </section>
+    </div>
+    <script src="./script.js"></script>
+    <script src="./freeHandsketch.js"></script>
 </body>
 
 

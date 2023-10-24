@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Drawing</title>
+</head>
+<body>
+    <button id="pencil">Pencil</button>
+    <button id="circleButton">Circle</button>
+    <button id="eraserButton">Eraser</button>
+    <input type="color" id="color-picker">
+    <canvas id="canvas" width="500" height="500" style="background-color: antiquewhite;"></canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const c = canvas.getContext("2d");
+        let isDrawing = false;
+        let isErasing = false;
+        let startX, startY;
+        let drawingColor = "#000000"; // Default drawing color
+
+        canvas.addEventListener("mousedown", (e) => {
+            if (!iscircleActive && !isPencilActive) return;
+            if (isPencilActive) {
+                isDrawing = true;
+                startX = e.clientX - canvas.getBoundingClientRect().left;
+                startY = e.clientY - canvas.getBoundingClientRect().top;
+                c.strokeStyle = drawingColor;
+            }
+        });
+
+        canvas.addEventListener("mousemove", (e) => {
+            if (isErasing) {
+                erase(e);
+            } else if (isDrawing && (iscircleActive || isPencilActive)) {
+                const endX = e.clientX - canvas.getBoundingClientRect().left;
+                const endY = e.clientY - canvas.getBoundingClientRect().top;
+                if (isPencilActive) {
+                    drawLine(startX, startY, endX, endY);
+                }
+                if (iscircleActive) {
+                    const radius = Math.sqrt((endX - startX) ** 2 + (endY - startY) ** 2);
+                    clearCanvas();
+                    drawCircle(startX, startY, radius);
+                }
+            }
+        });
+
+        canvas.addEventListener("mouseup", () => {
+            isDrawing = false;
+        });
+
+        function drawLine(x1, y1, x2, y2) {
+            c.beginPath();
+            c.moveTo(x1, y1);
+            c.lineTo(x2, y2);
+            c.stroke();
+            c.closePath();
+        }
+
+        function drawCircle(x, y, radius) {
+            c.beginPath();
+            c.arc(x, y, radius, 0, 2 * Math.PI);
+            c.stroke();
+            c.closePath();
+        }
+
+        function clearCanvas() {
+            c.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function erase(e) {
+            const x = e.clientX - canvas.getBoundingClientRect().left;
+            const y = e.clientY - canvas.getBoundingClientRect().top;
+            const eraserSize = 20; // Adjust the eraser size as needed
+            c.clearRect(x - eraserSize / 2, y - eraserSize / 2, eraserSize, eraserSize);
+        }
+
+        const circleButton = document.getElementById("circleButton");
+        let iscircleActive = false;
+
+        circleButton.addEventListener("click", () => {
+            circleButton.classList.toggle("active");
+            iscircleActive = !iscircleActive;
+            isPencilActive = false;
+            canvas.style.cursor = iscircleActive ? "crosshair" : "auto";
+        });
+
+        const pencil = document.getElementById("pencil");
+        let isPencilActive = false;
+
+        pencil.addEventListener("click", () => {
+            pencil.classList.toggle("active");
+            isPencilActive = !isPencilActive;
+            iscircleActive = false;
+            canvas.style.cursor = isPencilActive ? "crosshair" : "auto";
+        });
+
+        const eraserButton = document.getElementById("eraserButton");
+
+        eraserButton.addEventListener("click", () => {
+            eraserButton.classList.toggle("active");
+            isErasing = !isErasing;
+            iscircleActive = false;
+            isPencilActive = false;
+            canvas.style.cursor = isErasing ? "crosshair" : "auto";
+        });
+
+        const colorPicker = document.getElementById("color-picker");
+
+        colorPicker.addEventListener("change", () => {
+            drawingColor = colorPicker.value;
+        });
+    </script>
+</body>
+</html>
+

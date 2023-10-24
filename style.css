@@ -1,6 +1,8 @@
 * {
     padding: 0px;
     margin: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .bar {
@@ -14,8 +16,21 @@
     padding: 7px;
     width: auto;
     height: auto;
-    background-color: #f8f9fa;
+    background-color:rgb(248,249,250);
    margin-top: 5px;
+}
+.active{
+    background-color: rgb(224,223,255) !important;
+    border-radius: 4px !important;
+    color: rgb(12, 197, 21) !important;
+}
+/* .hand {
+    background-color:rgb(255,255,255) !important;
+    border: none !important;
+} */
+.hand:hover {
+    background-color:rgb(238, 238, 245) !important;
+    
 }
 
 .border>img {
@@ -294,4 +309,37 @@
     margin-left: 10px;
     border-radius: 8px;
 }
+}
+
+
+
+
+
+.root{
+    width: 100vw ;
+    height: 100vh;
+    overflow: hidden;
+    position: relative ;
+} 
+.navbar{
+    position: absolute !important;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    padding: 10px;
+    display: none; 
+}
+.left-button{
+    position: absolute;
+    z-index: 100;
+    left: 20px !important;
+    bottom: 20px !important;
+}
+.rights-button{
+    position: absolute;
+    z-index: 100;
+    right: 20px !important;
+    bottom: 20px !important;
 }
