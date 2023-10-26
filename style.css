@@ -16,33 +16,46 @@
     padding: 7px;
     width: auto;
     height: auto;
-    background-color:rgb(248,249,250);
-   margin-top: 5px;
+    background-color: rgb(248, 249, 250);
+    margin-top: 5px;
 }
-.active{
-    background-color: rgb(224,223,255) !important;
+
+.active {
+    background-color: rgb(224, 223, 255) !important;
     border-radius: 4px !important;
     color: rgb(12, 197, 21) !important;
 }
+
 /* .hand {
     background-color:rgb(255,255,255) !important;
     border: none !important;
 } */
 .hand:hover {
-    background-color:rgb(238, 238, 245) !important;
-    
-}
+    background-color: rgb(238, 238, 245) !important;
 
+}
 .border>img {
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
 }
 
-.hand>img {
+.hand>img,
+.color-picker {
     height: 15px;
     width: 15px;
     /* padding: 2px 0px; */
     margin-left: 2px;
+}
+
+#color-picker {
+    height: 40px;
+    width: 40px;
+    margin-left: 17px;
+    border-radius: 8px;
+    border: none !important;
+}
+#color-picker:hover{
+    cursor: pointer; 
 }
 
 .hand {
@@ -135,26 +148,30 @@
     height: 28.5px;
     color: rgb(41, 13, 102);
 }
-.all-button>button{
+
+.all-button>button {
     color: rgb(187, 179, 179);
     width: 300px;
-    
+
 }
-.btn-a>span{
+
+.btn-a>span {
     float: right;
 }
-.btn-a{
+
+.btn-a {
     margin-bottom: 1px;
 }
-.info-1{
+
+.info-1 {
     font-family: 'Caveat', cursive;
     font-size: 25px;
     color: #bcbcbc;
     letter-spacing: 2px;
-    
+
 }
 
-.card123{
+.card123 {
     display: none;
     margin-top: 25px;
     position: fixed;
@@ -165,37 +182,43 @@
     margin-left: 10px;
     border-radius: 8px;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
 
 
 
-.butt>svg{
+.butt>svg {
     width: 20px;
-    height:20px;
+    height: 20px;
 }
-.ctrl{
+
+.ctrl {
     margin-left: 95px;
     font-size: 14px;
     color: #ada5a5;
-   
+
 }
-.ctrl1{
+
+.ctrl1 {
     font-size: 14px;
     color: #ada5a5;
 }
-.open{
+
+.open {
     margin-left: 15px;
     font-size: 14px;
 
 }
-.hor-line{
+
+.hor-line {
     height: 1px;
     margin: 0.5rem 10px;
     background-color: #837979;
-    
+
 }
+
 .color-picker__button {
     width: 25px;
     height: 25px;
@@ -203,23 +226,27 @@
     border-radius: 4px;
 
 }
-.vert-line-canvas{
+
+.vert-line-canvas {
     height: 25px;
     width: 2px;
     background-color: #777070;
     margin: 5px;
     margin-left: 5px;
 }
-.active-color{
+
+.active-color {
     margin: 5px;
     padding: 0px;
 }
-.dropdown-select{
+
+.dropdown-select {
     width: 90% !important;
     margin-left: 12px;
     border-radius: 4px;
 }
-.ctrl-2{
+
+.ctrl-2 {
     margin-left: 21x;
     font-size: 14px;
     color: #ada5a5;
@@ -241,32 +268,37 @@
 /* @media only screen and (min-width: 1200px) {...} */
 
 @media only screen and (max-width: 600px) {
-     /* .mainboard{
+    /* .mainboard{
         background-color: #eb1313;
      } */
 
-     .menu-button{
+    .menu-button {
         position: fixed;
         margin-top: 600px;
-     }
-     .last-btn{
+    }
+
+    .last-btn {
         display: none;
-     }
-     .navbar{
+    }
+
+    .navbar {
         width: 90%;
         overflow-x: scroll;
         margin: auto;
         border-radius: 10px !important;
-       
-     }
-    .middle-bar{
-        box-shadow: none !important ;
+
+    }
+
+    .middle-bar {
+        box-shadow: none !important;
         border-radius: 12px;
     }
+
     .excali-logo {
         height: 35px;
         margin-top: 150px;
     }
+
     .info-1 {
         width: 80% !important;
         font-family: 'Caveat', cursive;
@@ -277,51 +309,58 @@
         text-align: center;
         margin-bottom: 20px;
     }
+
     .zoom {
         display: none;
     }
-    .all-button{
+
+    .all-button {
         margin-bottom: 50px !important;
     }
-    .rights-button{
+
+    .rights-button {
         display: none;
     }
-.footer{
-    margin-top:350px;
-}
-.back-firward{
-    margin-left: 155px;
-}
-.back-btn{
-    
-}
-.next-btn{
-    margin-left: 80px;
-}
-.card123{
-    display: none;
-    margin-top: 100px;
-    position: fixed;
-    background-color: #f8f9fa !important;
-    max-height: calc(80vh - 140px);
-    overflow-y: auto;
-    width: 300px;
-    margin-left: 10px;
-    border-radius: 8px;
-}
+
+    .footer {
+        margin-top: 350px;
+    }
+
+    .back-firward {
+        margin-left: 155px;
+    }
+
+    .back-btn {}
+
+    .next-btn {
+        margin-left: 80px;
+    }
+
+    .card123 {
+        display: none;
+        margin-top: 100px;
+        position: fixed;
+        background-color: #f8f9fa !important;
+        max-height: calc(80vh - 140px);
+        overflow-y: auto;
+        width: 300px;
+        margin-left: 10px;
+        border-radius: 8px;
+    }
 }
 
 
 
 
 
-.root{
-    width: 100vw ;
+.root {
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
-    position: relative ;
-} 
-.navbar{
+    position: relative;
+}
+
+.navbar {
     position: absolute !important;
     width: 100vw;
     display: flex;
@@ -329,15 +368,17 @@
     justify-content: space-between;
     z-index: 10;
     padding: 10px;
-    display: none; 
+    display: none;
 }
-.left-button{
+
+.left-button {
     position: absolute;
     z-index: 100;
     left: 20px !important;
     bottom: 20px !important;
 }
-.rights-button{
+
+.rights-button {
     position: absolute;
     z-index: 100;
     right: 20px !important;

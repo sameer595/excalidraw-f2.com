@@ -50,7 +50,7 @@
                         </button>
 
 
-                        <button class="btn butt btn-light d-flex " data-testid="json-export-button"
+                        <button id="" class="btn butt btn-light d-flex " data-testid="json-export-button"
                             aria-label="Save to..." type="button" title="Save to...">
                             <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class=""
                                 fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -308,8 +308,8 @@
                 <button type="button" class=" hand btn btn-light x">
                     <img src="./cursor.png" alt="">
                     <div class="num">1</div></button>
-                    <input type="color" id="color-picker">
-                    <button type="button" class=" hand btn btn-light ">
+                   
+                    <button type="button" class=" hand btn btn-light " id="rectangle">
                         <img src="./stop.png" alt="">
                         <div class="num">2</div>
                     </button>
@@ -403,7 +403,7 @@
 
     </div> -->
   <div class="c d-flex justify-content-between footer">
-        <div class="left-button d-flex">
+        <div class="left-button d-flex align-items-center justify-content-between ">
             <div class="zoom mx-4">
                 <button class="btn border btn-light zoom-out" type="button">
                     <img src="./minus.png" alt="">
@@ -416,18 +416,23 @@
                 </button>
             </div>
             <div class="back-firward">
-                <button class="btn border btn-light back-btn" type="button">
+                <button class="btn border btn-light back-btn"  id="undoButton" type="button">
                     <img src="./back-btn.png" alt="">
                 </button>
-                <button class="btn border btn-light next-btn" type="button">
+                <button class="btn border btn-light next-btn" id="redoButton" type="button">
                     <img src="./next.png" alt="">
                 </button>
+                
             </div>
+            <input type="range" id="myRange" min="1" max="20" style="padding: 10px; margin-left: 35px;">
+            <input type="color" id="color-picker">
+            <button class="btn btn-primary mx-4" id="saveButton">Save</button>
         </div>
 
 
 
         <div class="rights-button mx-4 d-flex ">
+        
             <button class="r-btn mx-2" type="button">
                 <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class="">
                     <path fill="currentColor"
@@ -442,6 +447,9 @@
     </div>
     <script src="./script.js"></script>
     <script src="./freeHandsketch.js"></script>
+    <script src="./circle.js"></script>
+    <script src="./eraser.js"></script>
+    <script src="./rectangle.js"></script>
 </body>
 
 
