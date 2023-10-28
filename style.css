@@ -2,7 +2,7 @@
     padding: 0px;
     margin: 0px;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: hidden; 
 }
 
 .bar {
@@ -18,18 +18,16 @@
     height: auto;
     background-color: rgb(248, 249, 250);
     margin-top: 5px;
+    
+
 }
 
 .active {
-    background-color: rgb(224, 223, 255) !important;
+    background-color: rgb(183, 182, 198) !important;
     border-radius: 4px !important;
     color: rgb(12, 197, 21) !important;
 }
 
-/* .hand {
-    background-color:rgb(255,255,255) !important;
-    border: none !important;
-} */
 .hand:hover {
     background-color: rgb(238, 238, 245) !important;
 
@@ -62,7 +60,6 @@
 
 .hand {
     margin-left: 2px;
-
 }
 
 .vline {
@@ -132,11 +129,11 @@
 }
 
 .excali-logo {
+    display: none !important;
+    position: fixed !important;
+    left: 30%;
+    top: 30%;
     margin: auto;
-    width: auto;
-    height: 50px;
-    margin-top: 140px;
-
 }
 
 .svg-1 {
@@ -154,7 +151,6 @@
 .all-button>button {
     color: rgb(187, 179, 179);
     width: 300px;
-
 }
 
 .btn-a>span {
@@ -192,8 +188,6 @@
 ::-webkit-scrollbar {
     display: none;
 }
-
-
 
 .butt>svg {
     width: 20px;
@@ -258,40 +252,29 @@
     color: #ada5a5;
 }
 
-/* Extra small devices (phones, 600px and down) */
-/* @media only screen and (max-width: 600px) {...} */
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/* @media only screen and (min-width: 600px) {...} */
-
-/* Medium devices (landscape tablets, 768px and up) */
-/* @media only screen and (min-width: 768px) {...} */
-
-/* Large devices (laptops/desktops, 992px and up) */
-/* @media only screen and (min-width: 992px) {...} */
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-/* @media only screen and (min-width: 1200px) {...} */
-
 @media only screen and (max-width: 600px) {
+ 
+
     .menu-button {
         position: fixed;
         left: 10px;
         bottom: 20.5px;
-
+  
     }
 
     .last-btn>.user-btn {
-        display: none !important;
+       
     }
 
     .last-btn>.btn-light {
-
-        width:55px;
+        right: 15px;
+        top: 15px;
         height: 38px;
         background-color: #5959af;
+        position: fixed;
     }
-    .last-btn>.btn-light>img{
+
+    .last-btn>.btn-light>img {
         display: none;
     }
 
@@ -306,6 +289,10 @@
         margin: auto;
         box-shadow: none !important;
         border-radius: 12px;
+        position: fixed;
+        left: 15px;
+        top: 10px;
+        /* overflow-y: scroll; */
     }
 
     .excali-logo {
@@ -345,13 +332,7 @@
     }
 
     .left-button>.btn {
-        /* margin-left: 45px; */
         margin: 0px 10px !important;
-        /* padding: 0px; */
-    }
-
-    .back-firward {
-        margin-right: 10px;
     }
 
     .back-firward>.btn {
@@ -361,21 +342,20 @@
     .left-button {
         margin-left: 50px !important;
         justify-content: space-around !important;
+        /* position: fixed;
+        right: 20px;
+        bottom: 10px; */
+
     }
 
     .user-btn {
-        display: flex !important;
+        /* display: flex !important;
         position: fixed;
         right: 10px;
-        top: 10px;
+        top: 10px; */
+        display: none !important;
     }
-
-
 }
-
-
-
-
 
 .root {
     width: 100vw;

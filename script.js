@@ -113,6 +113,35 @@ function toggleMenu1() {
     card123.classList.toggle("hide");
 }
 
+// const excali123 = document.querySelector(".lapav");
+// const changbutton = document.getElementsByClassName(".user-btn");
+// function toggleMenu2() {
+    
+//     excali123.classList.toggle("hide");
+//     changbutton.innerHTML ==="START";
+    
+
+// }
+
+const excali123 = document.querySelector(".lapav");
+const changbutton = document.querySelectorAll(".user-btn");
+
+function toggleMenu2() {
+    excali123.classList.toggle("hide");
+    // Check if the text content of the first element with the class "user-btn" is "START"
+    if (changbutton[0].textContent === "Home") {
+        // If it's "START", change it to "STOP"
+        changbutton[0].textContent = "Clean";
+    } else {
+        // If it's not "START", change it back to "START"
+        changbutton[0].textContent = "Home";
+    }
+}
+
+// Add a click event listener to the button
+changbutton[0].addEventListener("click", toggleMenu2);
+
+
 
 
 // clear canvas code - 1
