@@ -1,69 +1,161 @@
+Copy code
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Canvas Drawing with Different Shapes</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-    <canvas id="myCanvas" width="400" height="400" style="border: 1px solid black;"></canvas>
-    <select id="shapeSelector">
-        <option value="rectangle">Rectangle</option>
-        <option value="circle">Circle</option>
-        <option value="line">Line</option>
-    </select>
-    <button id="drawShape">Draw Shape</button>
-
+    <button id="lockButton">Lock Canvas</button>
+    <canvas id="diamondCanvas" width="400" height="400"></canvas>
     <script>
-        const canvas = document.getElementById("myCanvas");
-        const ctx = canvas.getContext("2d");
+        const canvas = document.getElementById('diamondCanvas');
+        const ctx = canvas.getContext('2d');
+        const diamonds = [];
 
-        let isDrawing = false;
-        let startX, startY;
-        let currentShape = "rectangle";
+        let isDrawing = true;
 
-        canvas.addEventListener("mousedown", (e) => {
-            isDrawing = true;
-            startX = e.clientX - canvas.getBoundingClientRect().left;
-            startY = e.clientY - canvas.getBoundingClientRect().top;
-        });
+        function toggleDrawing() {
+            isDrawing = !isDrawing;
+        }
 
-        canvas.addEventListener("mousemove", (e) => {
+        document.getElementById('lockButton').addEventListener('click', toggleDrawing);
+
+        canvas.addEventListener('mousedown', (e) => {
             if (!isDrawing) return;
-            const x = e.clientX - canvas.getBoundingClientRect().left;
-            const y = e.clientY - canvas.getBoundingClientRect().top;
 
-            if (currentShape === "rectangle") {
-                const width = x - startX;
-                const height = y - startY;
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.strokeRect(startX, startY, width, height);
-            } else if (currentShape === "circle") {
-                const radius = Math.sqrt((x - startX) ** 2 + (y - startY) ** 2);
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const startX = e.clientX - canvas.getBoundingClientRect().left;
+            const startY = e.clientY - canvas.getBoundingClientRect().top;
+
+            canvas.addEventListener('mousemove', (e) => {
+                drawDiamond(startX, startY, e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top);
+            });
+
+            canvas.addEventListener('mouseup', () => {
+                canvas.removeEventListener('mousemove', drawDiamond);
+            });
+        });
+
+        function drawDiamond(startX, startY, endX, endY) {
+            const centerX = (startX + endX) / 2;
+            const centerY = (startY + endY) / 2;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            diamonds.forEach((diamond) => {
                 ctx.beginPath();
-                ctx.arc(startX, startY, radius, 0, Math.PI * 2);
-                ctx.stroke();
+                ctx.moveTo(diamond.centerX, diamond.startY);
+                ctx.lineTo(diamond.endX, diamond.centerY);
+                ctx.lineTo(diamond.centerX, diamond.endY);
+                ctx.lineTo(diamond.startX, diamond.centerY);
                 ctx.closePath();
-            } else if (currentShape === "line") {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.beginPath();
-                ctx.moveTo(startX, startY);
-                ctx.lineTo(x, y);
+
+                ctx.strokeStyle = 'blue';
+                ctx.lineWidth = 2;
                 ctx.stroke();
-                ctx.closePath();
-            }
-        });
+            });
 
-        canvas.addEventListener("mouseup", () => {
-            isDrawing = false;
-        });
+            ctx.beginPath();
+            ctx.moveTo(centerX, startY);
+            ctx.lineTo(endX, centerY);
+            ctx.lineTo(centerX, endY);
+            ctx.lineTo(startX, centerY);
+            ctx.closePath();
 
-        document.getElementById("shapeSelector").addEventListener("change", (e) => {
-            currentShape = e.target.value;
-        });
+            ctx.strokeStyle = 'blue';
+            ctx.lineWidth = 2;
+            ctx.stroke();
 
-        document.getElementById("drawShape").addEventListener("click", () => {
-            currentShape = document.getElementById("shapeSelector").value;
-        });
+            diamonds.push({ startX, startY, endX, endY, centerX, centerY });
+        }
     </script>
 </body>
 </html>
+In this code, I added a "Lock Canvas" button. Clicking this button toggles the isDrawing variable. When drawing is locked, clicking and dragging on the canvas won't draw anything. When drawing is unlocked, you can draw as before.
+
+
+
+
+User
+// let startX, startY;
+let isDaimondActive = false;
+const diamonds = [];
+canvas.addEventListener('mousedown', (e) => {
+    startX = e.clientX - canvas.getBoundingClientRect().left;
+    startY = e.clientY - canvas.getBoundingClientRect().top;
+    canvas.addEventListener('mousemove', drawDiamond);
+});
+
+canvas.addEventListener('mouseup', () => {
+    canvas.removeEventListener('mousemove', drawDiamond);
+});
+
+function drawDiamond(e) {
+    const endX = e.clientX - canvas.getBoundingClientRect().left;
+    const endY = e.clientY - canvas.getBoundingClientRect().top;
+
+    const centerX = (startX + endX) / 2;
+    const centerY = (startY + endY) / 2;
+
+    c.clearRect(0, 0, canvas.width, canvas.height);
+
+    c.beginPath();
+    c.moveTo(centerX, startY);
+    c.lineTo(endX, centerY);
+    c.lineTo(centerX, endY);
+    c.lineTo(startX, centerY);
+    c.closePath();
+
+    c.strokeStyle = drawingColor;
+    c.lineWidth = drawThicknes; 
+    c.stroke();
+
+// store in rack
+undoredo();
+
+}
+
+// let isDaimondActive = false;
+
+const daimond = document.getElementById("daimond");
+function onDaimondClick() {
+    daimond.classList.toggle("active")
+    isDaimondActive = !isDaimondActive; // enabling the drawing 
+    isDaimondActive = !false == true
+
+    if (isDaimondActive) {
+        canvas.style.cursor = "crosshair";
+        // canvas.addEventListener("mousedown", onMouseDown);
+    }
+    else {
+        canvas.style.cursor = "auto";
+        // canvas.removeEventListener("mousedown", onMouseDown)
+    }
+}
+
+
+daimond.addEventListener("click", onDaimondClick);
+ChatGPT
+It looks like you've implemented a system to draw diamonds on a canvas when a specific button (presumably with the id "daimond") is clicked. The button toggles the ability to draw diamonds, and you've used the isDaimondActive variable to keep track of this state.
+
+The provided code appears to be set up to draw diamonds on a canvas in response to mouse events when the "Daimond" button is clicked and active. Here's a breakdown of the key parts of the code:
+
+isDaimondActive is a boolean variable that tracks whether the diamond drawing mode is active.
+
+The drawDiamond function is responsible for drawing the diamond shape on the canvas. It is called when the canvas is being clicked and dragged (within the mousemove event).
+
+The onDaimondClick function is triggered when the "Daimond" button is clicked. It toggles the isDaimondActive variable to enable or disable drawing mode. It also sets the cursor style to "crosshair" when drawing is enabled.
+
+The daimond element is presumably an HTML button with the id "daimond." The click event listener is added to this button to call the onDaimondClick function when it's clicked.
+
+You've included some commented out code ("// canvas.addEventListener...") that suggests the potential setup for handling mouse events when drawing is enabled. You can uncomment and implement these parts to make your drawing system fully functional.
+
+Remember to ensure that you've set up the canvas (canvas variable), and any other necessary variables like c, drawingColor, and drawThicknes, according to your project's requirements. Additionally, don't forget to define the undoredo function, which seems to be intended for handling undo/redo functionality.
+
+
+
+
+

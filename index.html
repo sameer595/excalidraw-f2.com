@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -25,343 +25,351 @@
 
 <body>
 
-        <div class="navbar" >
-            <div class="menu-btn mx-2">
-                <button class="btn border btn-light menu-button" type="button">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </button>
-                <!-- ---------pop up message--------- -->
-                <div class="card123 shadow">
-                    <div class=" d-flex flex-column">
+    <div class="navbar">
+        <div class="menu-btn mx-2" >
+            <button class="btn border btn-light menu-button" onclick="toggleMenu()" type="button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <!-- ---------pop up message--------- -->
+            <div class="card123 shadow hide">
+                <div class=" d-flex flex-column">
 
-                        <button class="btn butt btn-light d-flex ">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class=""
-                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="m9.257 6.351.183.183H15.819c.34 0 .727.182 1.051.506.323.323.505.708.505 1.05v5.819c0 .316-.183.7-.52 1.035-.337.338-.723.522-1.037.522H4.182c-.352 0-.74-.181-1.058-.5-.318-.318-.499-.705-.499-1.057V5.182c0-.351.181-.736.5-1.054.32-.321.71-.503 1.057-.503H6.53l2.726 2.726Z"
-                                    stroke-width="1.25"></path>
-                            </svg>
-                            <div class="text-1 d-flex">
-                                <div class="open d-flex">Open</div>
-                                <div class="ctrl d-flex">Ctrl+O</div>
-                            </div>
-                        </button>
+                    <button class="btn butt btn-light d-flex ">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class="" fill="none"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="m9.257 6.351.183.183H15.819c.34 0 .727.182 1.051.506.323.323.505.708.505 1.05v5.819c0 .316-.183.7-.52 1.035-.337.338-.723.522-1.037.522H4.182c-.352 0-.74-.181-1.058-.5-.318-.318-.499-.705-.499-1.057V5.182c0-.351.181-.736.5-1.054.32-.321.71-.503 1.057-.503H6.53l2.726 2.726Z"
+                                stroke-width="1.25"></path>
+                        </svg>
+                        <div class="text-1 d-flex">
+                            <div class="open d-flex">Open</div>
+                            <div class="ctrl d-flex">Ctrl+O</div>
+                        </div>
+                    </button>
 
 
-                        <button id="" class="btn butt btn-light d-flex " data-testid="json-export-button"
-                            aria-label="Save to..." type="button" title="Save to...">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class=""
-                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke-width="1.25"
-                                    d="M3.333 14.167v1.666c0 .92.747 1.667 1.667 1.667h10c.92 0 1.667-.746 1.667-1.667v-1.666M5.833 9.167 10 13.333l4.167-4.166M10 3.333v10">
+                    <button onclick="saveCanvasImage()" class="btn butt btn-light d-flex " data-testid="json-export-button"
+                        aria-label="Save to..." type="button" title="Save to...">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class="" fill="none"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke-width="1.25"
+                                d="M3.333 14.167v1.666c0 .92.747 1.667 1.667 1.667h10c.92 0 1.667-.746 1.667-1.667v-1.666M5.833 9.167 10 13.333l4.167-4.166M10 3.333v10">
+                            </path>
+                        </svg>
+                        <div class="dropdown-menu-item__text open">Save to...</div>
+                    </button>
+
+
+                    <button  class="btn butt btn-light d-flex " onclick="saveCanvasImage()" data-testid="image-export-button"
+                        aria-label="Export image..." type="button" title="Export image...">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class="" fill="none"
+                            stroke-width="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <g stroke-width="1.25">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M15 8h.01"></path>
+                                <path d="M12 20h-5a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v5">
                                 </path>
-                            </svg>
-                            <div class="dropdown-menu-item__text open">Save to...</div>
-                        </button>
+                                <path d="M4 15l4 -4c.928 -.893 2.072 -.893 3 0l4 4"></path>
+                                <path d="M14 14l1 -1c.617 -.593 1.328 -.793 2.009 -.598"></path>
+                                <path d="M19 16v6"></path>
+                                <path d="M22 19l-3 3l-3 -3"></path>
+                            </g>
+                        </svg>
+
+                        <div class="dropdown-menu-item__text open">Export image...</div>
+                        <div class="dropdown-menu-item__shortcut ctrl1">Ctrl+Shift+E</div>
+                    </button>
 
 
-                        <button class="btn butt btn-light d-flex " data-testid="image-export-button"
-                            aria-label="Export image..." type="button" title="Export image...">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class=""
-                                fill="none" stroke-width="2" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <g stroke-width="1.25">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M15 8h.01"></path>
-                                    <path d="M12 20h-5a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v5">
-                                    </path>
-                                    <path d="M4 15l4 -4c.928 -.893 2.072 -.893 3 0l4 4"></path>
-                                    <path d="M14 14l1 -1c.617 -.593 1.328 -.793 2.009 -.598"></path>
-                                    <path d="M19 16v6"></path>
-                                    <path d="M22 19l-3 3l-3 -3"></path>
-                                </g>
-                            </svg>
-
-                            <div class="dropdown-menu-item__text open">Export image...</div>
-                            <div class="dropdown-menu-item__shortcut ctrl1">Ctrl+Shift+E</div>
-                        </button>
+                    <button class="btn butt btn-light d-flex " data-testid="collab-button" type="button">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class="" fill="none"
+                            stroke-width="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <g stroke-width="1.5">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
+                            </g>
+                        </svg>
+                        <div class="dropdown-menu-item__text open">Live collaboration...</div>
+                    </button>
 
 
-                        <button class="btn butt btn-light d-flex " data-testid="collab-button" type="button">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class=""
-                                fill="none" stroke-width="2" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <g stroke-width="1.5">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                    <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
-                                </g>
-                            </svg>
-                            <div class="dropdown-menu-item__text open">Live collaboration...</div>
-                        </button>
-
-
-                        <button data-testid="help-menu-item" aria-label="Help" type="button"
-                            class="btn butt btn-light d-flex" title="Help">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class=""
-                                fill="none" stroke-width="2" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <g stroke-width="1.5">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <circle cx="12" cy="12" r="9"></circle>
-                                    <line x1="12" y1="17" x2="12" y2="17.01"></line>
-                                    <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
-                                </g>
-                            </svg>
-                            <div class="dropdown-menu-item__text open">Help</div>
-                            <div class="dropdown-menu-item__shortcut ">?</div>
-                        </button>
+                    <button data-testid="help-menu-item" aria-label="Help" type="button"
+                        class="btn butt btn-light d-flex" title="Help">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class="" fill="none"
+                            stroke-width="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <g stroke-width="1.5">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <line x1="12" y1="17" x2="12" y2="17.01"></line>
+                                <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
+                            </g>
+                        </svg>
+                        <div class="dropdown-menu-item__text open">Help</div>
+                        <div class="dropdown-menu-item__shortcut ">?</div>
+                    </button>
 
 
 
-                        <button data-testid="clear-canvas-button" aria-label="Reset the canvas" type="button"
-                            class="btn butt btn-light d-flex " title="Reset the canvas">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class=""
-                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke-width="1.25"
-                                    d="M3.333 5.833h13.334M8.333 9.167v5M11.667 9.167v5M4.167 5.833l.833 10c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.746 1.667-1.667l.833-10M7.5 5.833v-2.5c0-.46.373-.833.833-.833h3.334c.46 0 .833.373.833.833v2.5">
-                                </path>
-                            </svg>
-                            <div class="dropdown-menu-item__text open">Reset the canvas</div>
-                        </button>
+                    <button data-testid="clear-canvas-button" onclick="clearCanvas()" aria-label="Reset the canvas" type="button"
+                        class="btn butt btn-light d-flex " title="Reset the canvas">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class="" fill="none"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke-width="1.25"
+                                d="M3.333 5.833h13.334M8.333 9.167v5M11.667 9.167v5M4.167 5.833l.833 10c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.746 1.667-1.667l.833-10M7.5 5.833v-2.5c0-.46.373-.833.833-.833h3.334c.46 0 .833.373.833.833v2.5">
+                            </path>
+                        </svg>
+                        <div class="dropdown-menu-item__text open">Reset the canvas</div>
+                    </button>
 
 
-                        <div class="hor-line">
-                        </div>
-
-
-                        <a href="https://plus.excalidraw.com/plus?utm_source=excalidraw&amp;utm_medium=app&amp;utm_content=hamburger"
-                            target="_blank" rel="noreferrer" class="btn butt btn-light d-flex ">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class=""
-                                fill="none" stroke-width="2" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <g stroke-width="1.5">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <rect x="3" y="8" width="18" height="4" rx="1"></rect>
-                                    <line x1="12" y1="8" x2="12" y2="21"></line>
-                                    <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7"></path>
-                                    <path
-                                        d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5">
-                                    </path>
-                                </g>
-                            </svg>
-                            <div class="dropdown-menu-item__text open">Excalidraw+</div>
-                        </a>
-
-                        <a aria-label="GitHub" href="https://github.com/excalidraw/excalidraw" target="_blank"
-                            rel="noreferrer" class="btn butt btn-light d-flex " title="GitHub">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class=""
-                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M7.5 15.833c-3.583 1.167-3.583-2.083-5-2.5m10 4.167v-2.917c0-.833.083-1.166-.417-1.666 2.334-.25 4.584-1.167 4.584-5a3.833 3.833 0 0 0-1.084-2.667 3.5 3.5 0 0 0-.083-2.667s-.917-.25-2.917 1.084a10.25 10.25 0 0 0-5.166 0C5.417 2.333 4.5 2.583 4.5 2.583a3.5 3.5 0 0 0-.083 2.667 3.833 3.833 0 0 0-1.084 2.667c0 3.833 2.25 4.75 4.584 5-.5.5-.5 1-.417 1.666V17.5"
-                                    stroke-width="1.25"></path>
-                            </svg>
-                            <div class="dropdown-menu-item__text open">GitHub</div>
-                        </a>
-                        <a aria-label="Discord" href="https://discord.gg/UexuTaE" target="_blank" rel="noreferrer"
-                            class="btn butt btn-light d-flex" title="Discord">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class=""
-                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <g stroke-width="1.25">
-                                    <path
-                                        d="M7.5 10.833a.833.833 0 1 0 0-1.666.833.833 0 0 0 0 1.666ZM12.5 10.833a.833.833 0 1 0 0-1.666.833.833 0 0 0 0 1.666ZM6.25 6.25c2.917-.833 4.583-.833 7.5 0M5.833 13.75c2.917.833 5.417.833 8.334 0">
-                                    </path>
-                                    <path
-                                        d="M12.917 14.167c0 .833 1.25 2.5 1.666 2.5 1.25 0 2.361-1.39 2.917-2.5.556-1.39.417-4.861-1.25-9.584-1.214-.846-2.5-1.116-3.75-1.25l-.833 2.084M7.083 14.167c0 .833-1.13 2.5-1.526 2.5-1.191 0-2.249-1.39-2.778-2.5-.529-1.39-.397-4.861 1.19-9.584 1.157-.846 2.318-1.116 3.531-1.25l.833 2.084">
-                                    </path>
-                                </g>
-                            </svg>
-                            <div class="dropdown-menu-item__text open">Discord</div>
-                        </a>
-                        <a aria-label="Twitter" href="https://twitter.com/excalidraw" target="_blank" rel="noreferrer"
-                            class="btn butt btn-light d-flex " title="Twitter">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class=""
-                                fill="none" stroke-width="2" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <g stroke-width="1.25">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path
-                                        d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z">
-                                    </path>
-                                </g>
-                            </svg>
-                            <div class="dropdown-menu-item__text open">Twitter</div>
-                        </a>
-
-
-                        <div class="hor-line">
-                        </div>
-
-                        <button data-testid="toggle-dark-mode" aria-label="Dark mode" type="button"
-                            class="btn butt btn-light d-flex m-2" title="Dark mode">
-                            <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class=""
-                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                <path clip-rule="evenodd"
-                                    d="M10 2.5h.328a6.25 6.25 0 0 0 6.6 10.372A7.5 7.5 0 1 1 10 2.493V2.5Z"
-                                    stroke="currentColor"></path>
-                            </svg>
-
-                            <div class="dropdown-menu-item__text open">Dark mode</div>
-                            <div class="dropdown-menu-item__shortcut ctrl-2">Shift+Alt+D</div>
-                        </button>
-
-
-                        <div class="dropdown-menu-item-base dropdown-menu-item-custom"><select
-                                class="dropdown-select dropdown-select__language" aria-label="Select language"
-                                style="width: 100%;">
-                                <option value="en">English</option>
-                                <option value="id-ID">Bahasa Indonesia</option>
-                                <option value="ca-ES">Català</option>
-                                <option value="de-DE">Deutsch</option>
-                                <option value="es-ES">Español</option>
-                                <option value="eu-ES">Euskara</option>
-                                <option value="fr-FR">Français</option>
-                                <option value="gl-ES">Galego</option>
-                                <option value="it-IT">Italiano</option>
-                                <option value="ku-TR">Kurdî</option>
-                                <option value="lv-LV">Latviešu</option>
-                                <option value="nb-NO">Norsk bokmål</option>
-                                <option value="oc-FR">Occitan</option>
-                                <option value="pl-PL">Polski</option>
-                                <option value="pt-PT">Português</option>
-                                <option value="pt-BR">Português Brasileiro</option>
-                                <option value="ro-RO">Română</option>
-                                <option value="sk-SK">Slovenčina</option>
-                                <option value="sl-SI">Slovenščina</option>
-                                <option value="fi-FI">Suomi</option>
-                                <option value="sv-SE">Svenska</option>
-                                <option value="kab-KAB">Taqbaylit</option>
-                                <option value="tr-TR">Türkçe</option>
-                                <option value="cs-CZ">Česky</option>
-                                <option value="el-GR">Ελληνικά</option>
-                                <option value="ru-RU">Русский</option>
-                                <option value="uk-UA">Українська</option>
-                                <option value="he-IL">עברית</option>
-                                <option value="fa-IR">فارسی</option>
-                                <option value="mr-IN">मराठी</option>
-                                <option value="pa-IN">ਪੰਜਾਬੀ</option>
-                                <option value="ja-JP">日本語</option>
-                                <option value="zh-CN">简体中文</option>
-                                <option value="zh-TW">繁體中文</option>
-                                <option value="ko-KR">한국어</option>
-                            </select>
-                        </div>
-
-
-                        <div style="margin-top: 0.5rem;">
-                            <div data-testid="canvas-background-label" style="font-size: 0.75rem; margin: 0.5rem;">
-                                Canvas background</div>
-
-                            <div style="padding: 0px 0.625rem;">
-                                <div>
-                                    <div role="dialog" aria-modal="true" class="color-picker-container d-flex">
-                                        <div class="color-picker__top-picks">
-                                            <button class="color-picker__button active " type="button" title="#ffffff"
-                                                style="--swatch-color: #ffffff;">
-                                                <div class="color-picker__button-outline"></div>
-                                            </button>
-                                            <button class="color-picker__button " type="button" title="#f8f9fa"
-                                                style="--swatch-color: #f8f9fa;">
-                                                <div class="color-picker__button-outline"></div>
-                                            </button>
-                                            <button class="color-picker__button " type="button" title="#f5faff"
-                                                style="--swatch-color: #f5faff;">
-                                                <div class="color-picker__button-outline"></div>
-                                            </button>
-                                            <button class="color-picker__button " type="button" title="#fffce8"
-                                                style="--swatch-color: #fffce8;">
-                                                <div class="color-picker__button-outline"></div>
-                                            </button>
-                                            <button class="color-picker__button " type="button" title="#fdf8f6"
-                                                style="--swatch-color: #fdf8f6;">
-                                                <div class="color-picker__button-outline"></div>
-                                            </button>
-                                        </div>
-                                        <div class="vert-line-canvas">
-                                        </div>
-                                        <button type="button" aria-haspopup="dialog" aria-expanded="false"
-                                            aria-controls="radix-:r4:" data-state="closed"
-                                            class="color-picker__button active-color" aria-label="Canvas background"
-                                            title="Show background color picker" style="--swatch-color: #ffffff;">
-                                            <div class="color-picker__button-outline"></div>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="hor-line">
                     </div>
-                </div>
-            </div>
-            <div class="middle-bar d-flex align-items-center rounded border shadow-sm p-1">
-                <button type="button" class=" hand btn btn-light">
-                    <img src="./padlock.png" alt=""></button>
-                <div class="vline">
+
+
+                    <a href="https://plus.excalidraw.com/plus?utm_source=excalidraw&amp;utm_medium=app&amp;utm_content=hamburger"
+                        target="_blank" rel="noreferrer" class="btn butt btn-light d-flex ">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class="" fill="none"
+                            stroke-width="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <g stroke-width="1.5">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <rect x="3" y="8" width="18" height="4" rx="1"></rect>
+                                <line x1="12" y1="8" x2="12" y2="21"></line>
+                                <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7"></path>
+                                <path
+                                    d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5">
+                                </path>
+                            </g>
+                        </svg>
+                        <div class="dropdown-menu-item__text open">Excalidraw+</div>
+                    </a>
+
+                    <a aria-label="GitHub" href="https://github.com/excalidraw/excalidraw" target="_blank"
+                        rel="noreferrer" class="btn butt btn-light d-flex " title="GitHub">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class="" fill="none"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M7.5 15.833c-3.583 1.167-3.583-2.083-5-2.5m10 4.167v-2.917c0-.833.083-1.166-.417-1.666 2.334-.25 4.584-1.167 4.584-5a3.833 3.833 0 0 0-1.084-2.667 3.5 3.5 0 0 0-.083-2.667s-.917-.25-2.917 1.084a10.25 10.25 0 0 0-5.166 0C5.417 2.333 4.5 2.583 4.5 2.583a3.5 3.5 0 0 0-.083 2.667 3.833 3.833 0 0 0-1.084 2.667c0 3.833 2.25 4.75 4.584 5-.5.5-.5 1-.417 1.666V17.5"
+                                stroke-width="1.25"></path>
+                        </svg>
+                        <div class="dropdown-menu-item__text open">GitHub</div>
+                    </a>
+                    <a aria-label="Discord" href="https://discord.gg/UexuTaE" target="_blank" rel="noreferrer"
+                        class="btn butt btn-light d-flex" title="Discord">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class="" fill="none"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <g stroke-width="1.25">
+                                <path
+                                    d="M7.5 10.833a.833.833 0 1 0 0-1.666.833.833 0 0 0 0 1.666ZM12.5 10.833a.833.833 0 1 0 0-1.666.833.833 0 0 0 0 1.666ZM6.25 6.25c2.917-.833 4.583-.833 7.5 0M5.833 13.75c2.917.833 5.417.833 8.334 0">
+                                </path>
+                                <path
+                                    d="M12.917 14.167c0 .833 1.25 2.5 1.666 2.5 1.25 0 2.361-1.39 2.917-2.5.556-1.39.417-4.861-1.25-9.584-1.214-.846-2.5-1.116-3.75-1.25l-.833 2.084M7.083 14.167c0 .833-1.13 2.5-1.526 2.5-1.191 0-2.249-1.39-2.778-2.5-.529-1.39-.397-4.861 1.19-9.584 1.157-.846 2.318-1.116 3.531-1.25l.833 2.084">
+                                </path>
+                            </g>
+                        </svg>
+                        <div class="dropdown-menu-item__text open">Discord</div>
+                    </a>
+                    <a aria-label="Twitter" href="https://twitter.com/excalidraw" target="_blank" rel="noreferrer"
+                        class="btn butt btn-light d-flex " title="Twitter">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class="" fill="none"
+                            stroke-width="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <g stroke-width="1.25">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z">
+                                </path>
+                            </g>
+                        </svg>
+                        <div class="dropdown-menu-item__text open">Twitter</div>
+                    </a>
+
+
+                    <div class="hor-line">
+                    </div>
+
+                    <button data-testid="toggle-dark-mode" aria-label="Dark mode" type="button"
+                        class="btn butt btn-light d-flex m-2" title="Dark mode">
+                        <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 20 20" class="" fill="none"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path clip-rule="evenodd"
+                                d="M10 2.5h.328a6.25 6.25 0 0 0 6.6 10.372A7.5 7.5 0 1 1 10 2.493V2.5Z"
+                                stroke="currentColor"></path>
+                        </svg>
+
+                        <div class="dropdown-menu-item__text open">Dark mode</div>
+                        <div class="dropdown-menu-item__shortcut ctrl-2">Shift+Alt+D</div>
+                    </button>
+
+
+                    <div class="dropdown-menu-item-base dropdown-menu-item-custom"><select
+                            class="dropdown-select dropdown-select__language" aria-label="Select language"
+                            style="width: 100%;">
+                            <option value="en">English</option>
+                            <option value="id-ID">Bahasa Indonesia</option>
+                            <option value="ca-ES">Català</option>
+                            <option value="de-DE">Deutsch</option>
+                            <option value="es-ES">Español</option>
+                            <option value="eu-ES">Euskara</option>
+                            <option value="fr-FR">Français</option>
+                            <option value="gl-ES">Galego</option>
+                            <option value="it-IT">Italiano</option>
+                            <option value="ku-TR">Kurdî</option>
+                            <option value="lv-LV">Latviešu</option>
+                            <option value="nb-NO">Norsk bokmål</option>
+                            <option value="oc-FR">Occitan</option>
+                            <option value="pl-PL">Polski</option>
+                            <option value="pt-PT">Português</option>
+                            <option value="pt-BR">Português Brasileiro</option>
+                            <option value="ro-RO">Română</option>
+                            <option value="sk-SK">Slovenčina</option>
+                            <option value="sl-SI">Slovenščina</option>
+                            <option value="fi-FI">Suomi</option>
+                            <option value="sv-SE">Svenska</option>
+                            <option value="kab-KAB">Taqbaylit</option>
+                            <option value="tr-TR">Türkçe</option>
+                            <option value="cs-CZ">Česky</option>
+                            <option value="el-GR">Ελληνικά</option>
+                            <option value="ru-RU">Русский</option>
+                            <option value="uk-UA">Українська</option>
+                            <option value="he-IL">עברית</option>
+                            <option value="fa-IR">فارسی</option>
+                            <option value="mr-IN">मराठी</option>
+                            <option value="pa-IN">ਪੰਜਾਬੀ</option>
+                            <option value="ja-JP">日本語</option>
+                            <option value="zh-CN">简体中文</option>
+                            <option value="zh-TW">繁體中文</option>
+                            <option value="ko-KR">한국어</option>
+                        </select>
+                    </div>
 
                 </div>
-                <button type="button" class=" hand btn btn-light ">
-                    <img src="./hand.png" alt=""></button>
-                <button type="button" class=" hand btn btn-light x">
-                    <img src="./cursor.png" alt="">
-                    <div class="num">1</div></button>
-                   
-                    <button type="button" class=" hand btn btn-light " id="rectangle">
-                        <img src="./stop.png" alt="">
-                        <div class="num">2</div>
-                    </button>
-                    <button type="button" class=" hand btn btn-light ">
-                        <img src="./diamond.png" alt="">
-                        <div class="num">3</div>
-                    </button>
-                    <button type="button" id="circleButton" class=" hand btn btn-light ">
-                        <img src="./dry-clean.png" alt="">
-                        <div class="num">4</div>
-                    </button>
-                    <button type="button" class=" hand btn btn-light ">
-                        <img src="./right-arrow.png" alt="">
-                        <div class="num">5</div>
-                    </button>
-                    <button type="button" class=" hand btn btn-light ">
-                        <img src="./line.png" alt="">
-                        <div class="num">6</div>
-                    </button>
-                    <button type="button" class=" hand btn btn-light" id="pencil">
-                        <img src="./edit.png" alt="">
-                        <div class="num">7</div>
-                    </button>
-                    <button type="button" class=" hand btn btn-light ">
-                        <img src="./alphabet.png" alt="">
-                        <div class="num">8</div>
-                    </button>
-                    <button type="button" class=" hand btn btn-light ">
-                        <img src="./photos.png" alt="">
-                        <div class="num">9</div>
-                    </button>
-                    <button type="button" id="eraserButton" class=" hand btn btn-light ">
-                        <img src="./eraser.png" alt="">
-                        <div class="num">0</div>
-                    </button>
-                    <button type="button" class=" hand btn btn-light ">
-                        <img src="./moretools.png" alt=""></button>
-                    <p></p>
-            </div>
-            <div class="last-btn mx-2">
-                <button class="btn border mx-2 btn-light user-btn" type="submit">
-                    <img src="./user (2).png" alt=""></button>
-                <button class="btn border btn-light" type="button">
-                    <img src="./book.png" alt="">
-                    Library
-                </button>
-
             </div>
 
 
         </div>
-        <canvas id="canvas" style="background-color: FFFFFF;"></canvas>
+
+
+
+
+
+        <div class="middle-bar d-flex align-items-center rounded border shadow-sm p-1">
+            <button type="button" onclick="onActionClick(this)" class=" hand btn btn-light" id="rectangle">
+                <img src="./stop.png" alt="">
+                <div class="num">2</div>
+                
+            </button>
+            <button type="button" onclick="onActionClick(this)" id="daimond" class=" hand btn btn-light ">
+                <img src="./diamond.png" alt="">
+                <div class="num">3</div>
+            </button>
+
+            <button type="button" onclick="onActionClick(this)" id="circle" class=" hand btn btn-light ">
+                <img src="./dry-clean.png" alt="">
+                <div class="num">4</div>
+            </button>
+            <button type="button" onclick="onActionClick(this)" class=" hand btn btn-light" id="pencil">
+                <img src="./edit.png" alt="">
+                <div class="num">7</div>
+            </button>
+            <button type="button" onclick="onActionClick(this)" id="eraser" class=" hand btn btn-light ">
+                <img src="./eraser.png" alt="">
+                <div class="num">0</div>
+            </button>
+            <button type="button" onclick="onActionClick(this)" class=" hand btn btn-light" id="line">
+                <img src="./line.png" alt="">
+                <div class="num">6</div>
+            </button>
+            <!-- <button type="button" class=" hand btn btn-light extra">
+                    <img src="./padlock.png" alt=""></button>
+                <div class="vline">
+
+                </div>
+                <button type="button" class=" hand btn btn-light extra ">
+                    <img src="./hand.png" alt=""></button>
+                <button type="button" class=" hand btn btn-light x extra">
+                    <img src="./cursor.png" alt="">
+                    <div class="num">1</div></button>
+                   
+                    
+                    <button type="button" class=" hand btn btn-light extra ">
+                        <img src="./right-arrow.png" alt="">
+                        <div class="num">5</div>
+                    </button>
+                    
+                    
+                    <button type="button" class=" hand btn btn-light extra">
+                        <img src="./alphabet.png" alt="">
+                        <div class="num">8</div>
+                    </button>
+                    <button type="button" class=" hand btn btn-light extra">
+                        <img src="./photos.png" alt="">
+                        <div class="num">9</div>
+                    </button>
+                    
+                    <button type="button" class=" hand btn btn-light extra">
+                        <img src="./moretools.png" alt=""></button> -->
+        </div>
+
+
+        <div class="last-btn mx-2">
+            <button class="btn border mx-2 btn-light user-btn" type="submit">
+                <img src="./user (2).png" alt=""></button>
+            <button class="btn border btn-light" onclick="toggleMenu1()" type="button">
+                <img src="./book.png" alt="">
+                Lib
+            </button>
+
+        </div>
+
+
+    </div>
+
+    
+    <div class="selectItem shadow hide">
+        <div class="thick m-2">
+        <label for="strokestyle">Thickness</label> <br>
+        <input type="range" id="strokewidth" name="strokewidth" min="3" max="10" oninput="onInput(this)" />
+    </div>
+    <div class="colour m-2">
+        <label for="strokestyle">Stroke Color</label><br>
+        <input type="color" name="strokestyle" id="strokestyle" oninput="onInput(this)" />
+    </div>
+    <div class="color-picker__button-outline  mt-2">Select Background</div>
+    <div class="bgclr d-flex justify-content-between m-1">
+        <!-- <div class="color-picker__top-picks"> -->
+            <button class="color-picker__button active " onclick="changeCanvasBackgroundColor(this)" type="button" title="#ffffff" value="#b7a0a0" style="background-color: #b7a0a0;">
+                <div class="color-picker__button-outline"></div>
+            </button>
+            <button class="color-picker__button " onclick="changeCanvasBackgroundColor(this)" type="button" title="#f8f9fa" value="#a0aebc" style="background-color: #a0aebc;">
+                <div class="color-picker__button-outline"></div>
+            </button>
+            <button class="color-picker__button " onclick="changeCanvasBackgroundColor(this)" type="button" title="#f5faff" value="#d7a2cb"  style="background-color: #d7a2cb;">
+                <div class="color-picker__button-outline"></div>
+            </button>
+            <button class="color-picker__button " onclick="changeCanvasBackgroundColor(this)" type="button" title="#fffce8" value="#989687" style="background-color: #989687;">
+                <div class="color-picker__button-outline"></div>
+            </button>
+            <button class="color-picker__button " onclick="changeCanvasBackgroundColor(this)" type="button" title="#fdf8f6" value="white" style="background-color:white;">
+                <div class="color-picker__button-outline"></div>
+            </button>
+        <!-- </div> -->
+
+    </div>
+
+    </div>
+
+
+
+    <canvas id="canvas" style="background-color: FFFFFF;"></canvas>
+
+
+
+
+
 
 
 
@@ -402,10 +410,10 @@
         </div>
 
     </div> -->
-  <div class="c d-flex justify-content-between footer">
+    <div class="c d-flex justify-content-between footer">
         <div class="left-button d-flex align-items-center justify-content-between ">
             <div class="zoom mx-4">
-                <button class="btn border btn-light zoom-out" type="button">
+                <button class="btn border btn-light zoom-out"  type="button">
                     <img src="./minus.png" alt="">
                 </button>
                 <button class="btn border btn-light" type="button">
@@ -416,23 +424,23 @@
                 </button>
             </div>
             <div class="back-firward">
-                <button class="btn border btn-light back-btn"  id="undoButton" type="button">
+                <button class="btn border btn-light back-btn" id="undoButton" type="button">
                     <img src="./back-btn.png" alt="">
                 </button>
                 <button class="btn border btn-light next-btn" id="redoButton" type="button">
                     <img src="./next.png" alt="">
                 </button>
-                
+
             </div>
-            <input type="range" id="myRange" min="1" max="20" style="padding: 10px; margin-left: 35px;">
-            <input type="color" id="color-picker">
             <button class="btn btn-primary mx-4" id="saveButton">Save</button>
+           
+            <button class="btn btn-danger mx-2" onclick="clearCanvas()" id="clearCanvas">Clear</button>
         </div>
 
 
 
         <div class="rights-button mx-4 d-flex ">
-        
+
             <button class="r-btn mx-2" type="button">
                 <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24" class="">
                     <path fill="currentColor"
@@ -440,16 +448,18 @@
                     </path>
                 </svg>
             </button>
-            <button class="btn border btn-light" type="button">
+            <button class=" l-btn btn border btn-light" id="library" type="button">
                 <img src="./help.png" alt="">
             </button>
         </div>
     </div>
     <script src="./script.js"></script>
-    <script src="./freeHandsketch.js"></script>
+    <script src="./abc.js"></script>
+    <!-- <script src="./freeHandsketch.js"></script>
     <script src="./circle.js"></script>
     <script src="./eraser.js"></script>
     <script src="./rectangle.js"></script>
+    <script src="./daimond.js"></script> -->
 </body>
 
 
